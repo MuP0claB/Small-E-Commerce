@@ -7,4 +7,6 @@ public interface Countable {
     String getName();
 
     double getPrice();
+
+    void setPrice(double pricePerKg);
 }

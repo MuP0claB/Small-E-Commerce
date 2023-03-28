@@ -7,24 +7,24 @@ public class ShoppingBasket {
 
     private List<Countable> items = new ArrayList<>();
 
-    public void addItem (Countable item) {
+    public void addItem(Countable item) {
         items.add(item);
     }
 
-    public void removeItem (Countable item) {
+    public void removeItem(Countable item) {
         items.remove(item);
     }
 
-    public double getTotalPrice () {
+    public void getTotalPrice() {
         double totalPrice = 0;
 
         for (Countable item : items) {
             totalPrice += item.getPrice() * item.getCount();
         }
-        return totalPrice;
+        System.out.printf("ОБЩА ЦЕНА НА ПЛОДОВЕТЕ В КОШНИЦАТА: %.2f", totalPrice);
     }
 
-    public void applyPromotion () {
+    public void applyPromotion() {
         int appleCount = 0;
         int pearCount = 0;
 
@@ -42,7 +42,7 @@ public class ShoppingBasket {
         if (pearCount >= 3) {
             for (Countable item : items) {
                 if (item.getName().equals("pear")) {
-          //          item.setPrice(item.getPrice() / 2);
+                    item.setPrice(item.getPrice() / 2);
                     break;
                 }
             }
