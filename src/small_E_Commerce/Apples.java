@@ -1,40 +1,31 @@
 package small_E_Commerce;
 
+import java.util.HashMap;
+
 public class Apples implements Countable {
 
     private int count;
-    private String name = "apple";
-    private double pricePerKg = 3.00;
+    private double price = 2.0;
 
-    public Apples(int count) {
-        this.count = count;
+    public Apples() {
+        this.count = 1;
+    }
+
+    @Override
+    public double getPrice() {
+        if (count % 3 == 0) {
+            return 0;
+        }
+        return price;
+    }
+
+    @Override
+    public void incrementCount() {
+        count++;
     }
 
     @Override
     public int getCount() {
         return count;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public double getPrice() {
-        return pricePerKg;
-    }
-
-    @Override
-    public void setPrice(double pricePerKg) {
-        this.pricePerKg = pricePerKg;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }
