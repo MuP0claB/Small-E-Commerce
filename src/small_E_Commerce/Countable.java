@@ -2,9 +2,6 @@ package small_E_Commerce;
 
 public interface Countable {
 
-    double getPrice();
+    double getTotalPrice();
 
-    void incrementCount();
-
-    int getCount();
 }
