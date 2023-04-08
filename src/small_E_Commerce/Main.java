@@ -17,21 +17,21 @@ public class Main {
         Instruction.printOptions();
 
         int choice = scanner.nextInt();
-
         while (choice == 1 || choice == 2) {
+            Product product = new Product();
 
             switch (choice) {
                 case 1:
-                    Apple apple = new Apple();
+                    product.setName("Apples");
                     System.out.println("How many apples");
-                    apple.incrementCount(scanner.nextInt());
-                    shoppingBasket.addProduct(apple);
+                    product.setCount(scanner.nextInt());
+                    shoppingBasket.addProduct(product);
                     break;
                 case 2:
-                    Pear pear = new Pear();
+                    product.setName("Pears");
                     System.out.println("How many pears");
-                    pear.incrementCount(scanner.nextInt());
-                    shoppingBasket.addProduct(pear);
+                    product.setCount(scanner.nextInt());
+                    shoppingBasket.addProduct(product);
                     break;
             }
             Instruction.printOptions();

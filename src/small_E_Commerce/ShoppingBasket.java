@@ -9,17 +9,17 @@ public class ShoppingBasket {
     public ShoppingBasket() {
 
     }
+    public void addProduct(Product product) {
+        if (shoppingBasket.containsKey(product.getName())) {
+            double newPrice = shoppingBasket.get(product.getName()) + product.getProductPrice();
+            shoppingBasket.put(product.getName(), newPrice);
 
-    public void addProduct(Apple apple) {
-        shoppingBasket.put("Apples", apple.getProductPrice());
+        } else{
+            shoppingBasket.put(product.getName(), product.getProductPrice());
+        }
     }
-
-    public void addProduct(Pear pear) {
-        shoppingBasket.put("Pears", pear.getProductPrice());
-    }
-
     public void printProducts() {
-        shoppingBasket.entrySet().forEach(product -> System.out.println(product.getKey() + " - " + product.getValue() + " lv."));
+        shoppingBasket.entrySet().forEach(product -> System.out.printf("%s - %.2f  lv.\n", product.getKey(), product.getValue()));
     }
 
     public double getProductPrice() {
