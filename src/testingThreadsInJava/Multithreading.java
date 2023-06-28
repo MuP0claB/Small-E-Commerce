@@ -3,14 +3,14 @@ package testingThreadsInJava;
 public class Multithreading {
 
     public static void main(String[] args) throws InterruptedException {
-       long start = System.currentTimeMillis();
+        long start = System.currentTimeMillis();
 
-       int [][] matrixA = new int [5] [3] ;
-       int [][] matrixB = new int [3] [5] ;
-      int [][] result = new int [matrixA.length][matrixB[0].length];
+        int[][] matrixA = new int[5][3];
+        int[][] matrixB = new int[3][5];
+        int[][] result = new int[matrixA.length][matrixB[0].length];
 
-      fillMatrix(matrixA);
-      fillMatrix(matrixB);
+        fillMatrix(matrixA);
+        fillMatrix(matrixB);
 
         for (int i = 0; i < result.length; i++) {
             MultithreadThing myThing = new MultithreadThing(matrixA, matrixB, result, i);
